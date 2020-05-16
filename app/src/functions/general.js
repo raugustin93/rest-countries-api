@@ -13,6 +13,10 @@ export function getNameAlphaFromBorder(code) {
   return { name, alpha2Code };
 }
 
+export function getCountries(region) {
+  return countries.filter((country) => country.region === region);
+}
+
 export function getCountry(code) {
   const name = getCountryName(code);
   return countries.find((country) => country.name === name);

@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import {
   getCountryName,
   getCountry,

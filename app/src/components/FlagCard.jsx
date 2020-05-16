@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function FlagCard(props) {
-  const { id, name, population, region, capital, alpha2Code } = props.flag;
+  const { name, population, region, capital, alpha2Code } = props.flag;
   return (
-    <div className="card" key={id}>
+    <div className="card" key={name}>
       <img
-        src={`./assets/images/flags/${alpha2Code.toLowerCase()}.webp`}
+        src={`/assets/images/flags/${alpha2Code.toLowerCase()}.webp`}
         alt={`Flag of ${name}`}
         className="card-img-top"
       />

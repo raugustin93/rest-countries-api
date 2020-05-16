@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { getFlags } from "../functions/flagsapi";
 import FlagCard from "../components/FlagCard";
 
@@ -18,7 +17,7 @@ export default function Home() {
   }
 
   return (
-    <section id="wrapper-container" className="container">
+    <section id="wrapper-container" className="container mt-5">
       <div id="flag-wrapper">{flags.map(renderFlagCard)}</div>
     </section>
   );
