@@ -18,12 +18,28 @@ img {
   max-width: 100%;
 }
 
+.country-border {
+  display: inline-block;
+}
+
+.country-border + .country-border {
+  margin-left: 0.5em;
+}
+
+.country-borders button {
+  background-color: var(--mode);
+  color: var(--text);
+}
+
 .head-bar {
+  background-color: var(--mode);
+}
+
+.head-bar .container {
   height: 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--mode);
 }
 
 #switcher {
@@ -40,6 +56,9 @@ h1 {
 #backBtn {
   margin-top: 2em;
   margin-bottom: 2em;
+  border: 2px solid #eeeeee;
+  color: var(--text);
+  padding: 0.5em 2em;
 }
 
 @media (min-width: 1200px) {
@@ -75,4 +94,38 @@ img {
 .card {
   background-color: var(--mode);
   max-width: 400px;
+}
+
+.country-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.country-list li {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 992px) {
+  .country-borders {
+    display: inline-block;
+  }
+
+  .country-list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .country-list ul {
+    width: 48%;
+  }
+
+  #country {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #country > div {
+    width: 45%;
+  }
 }

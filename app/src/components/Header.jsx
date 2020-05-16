@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { toggleTheme } from "../functions/theme";
+import { getRegions } from "../functions/general";
 
 export default function Header() {
   const [theme, setTheme] = useState(localStorage.getItem("theme"));
@@ -7,13 +9,26 @@ export default function Header() {
     toggleTheme();
     setTheme(localStorage.getItem("theme"));
   }
+  const renderRegionsList = () =>
+    getRegions().map((region) => {
+      return (
+        <Link to={`/region/${region}`}>
+          {" "}
+          <button className="btn">{region}</button>{" "}
+        </Link>
+      );
+    });
+
   return (
     <header>
-      <div className="container head-bar">
-        <h1>Where in the world?</h1>
-        <button id="switcher" onClick={updateTheme}>
-          {theme} Mode
-        </button>
+      <div className="head-bar">
+        <div className="container">
+          <h1>Where in the world?</h1>
+          <div className="region-list">{renderRegionsList()}</div>
+          <button id="switcher" onClick={updateTheme}>
+            {theme} Mode
+          </button>
+        </div>
       </div>
     </header>
   );
