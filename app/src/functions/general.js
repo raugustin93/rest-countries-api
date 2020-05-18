@@ -10,7 +10,7 @@ const { borderToCountry } = require("../json/borders.json");
 export function contentRoot(path) {
   let root = "/";
   if (window.location.hostname === "rudsona.github.io")
-    root = "https://rudsona.github.io/rest-countries-api/";
+    root = "/rest-countries-api/";
   if (path) return root + path;
   else return root;
 }
