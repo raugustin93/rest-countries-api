@@ -24,11 +24,11 @@ export function setTheme(themeName) {
   localStorage.setItem("theme", themeName);
   document
     .getElementById("theme")
-    .setAttribute("href", contentRoot(`css/${theme}-theme.css`));
+    .setAttribute("href", contentRoot(`css/${themeName}-theme.css`));
 }
 
 export function toggleTheme() {
-  localStorage.getItem("theme") === "dark"
+  window.localStorage.getItem("theme") === "dark"
     ? setTheme("light")
     : setTheme("dark");
 }

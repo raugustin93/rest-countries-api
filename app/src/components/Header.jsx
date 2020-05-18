@@ -12,7 +12,7 @@ export default function Header() {
   const renderRegionsList = () =>
     getRegions().map((region) => {
       return (
-        <Link to={contentRoot(`region/${region}`)}>
+        <Link to={contentRoot(`region/${region}`)} key={region}>
           {" "}
           <button className="btn">{region}</button>{" "}
         </Link>
