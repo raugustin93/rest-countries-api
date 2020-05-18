@@ -4,7 +4,8 @@ import {
   getCountryName,
   getCountry,
   getLanguageNamesStr,
-  getCurrencyStr
+  getCurrencyStr,
+  contentRoot
 } from "../functions/general";
 import BackBtn from "../components/BackBtn";
 import BorderCountry from "../components/BorderCountry";
@@ -30,7 +31,7 @@ export default function Country() {
       <div id="country">
         <div className="country-image">
           <img
-            src={`/assets/images/w702/${id.toLowerCase()}.webp`}
+            src={contentRoot(`assets/images/w702/${id.toLowerCase()}.webp`)}
             alt={`Flag of ${getCountryName(id)}`}
           />
         </div>
