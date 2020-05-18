@@ -5,11 +5,26 @@ import FlagCard from "../components/FlagCard";
 export default function Home() {
   // state
   const [flags, setFlags] = useState([]);
-
   useEffect(loadFlags, []);
+  const mainFlags = [
+    "United States",
+    "Haiti",
+    "Jamaica",
+    "Nigeria",
+    "Ghana",
+    "France",
+    "South Africa",
+    "Cuba",
+    "Ethiopia",
+    "Dominican Republic",
+    "Canada",
+    "Tanzania"
+  ];
 
   function loadFlags() {
-    getFlags().then(({ data }) => setFlags(data));
+    // getFlags().then(({ data }) => setFlags(data));
+    const flagsObj = getFlags(mainFlags);
+    setFlags(flagsObj);
   }
 
   function renderFlagCard(flag) {
