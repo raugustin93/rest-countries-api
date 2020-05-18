@@ -4,8 +4,16 @@ const {
 } = require("../json/alphaCodes(CountryNames).json");
 const countries = require("../json/countries.json"); // an array
 const { alpha } = require("../json/alphacodes(lang).json");
-const { alphaToCurrency, currencyToAlpha } = require("../json/currencies.json");
-const { borderToCountry, countryToBorder } = require("../json/borders.json");
+const { alphaToCurrency } = require("../json/currencies.json");
+const { borderToCountry } = require("../json/borders.json");
+
+export function contentRoot(path) {
+  let root = "/";
+  if (window.location.hostname === "rudsona.github.io")
+    root = "https://rudsona.github.io/rest-countries-api/";
+  if (path) return root + path;
+  else return root;
+}
 
 export function getNameAlphaFromBorder(code) {
   const name = borderToCountry[code];

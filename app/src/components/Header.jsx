@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { toggleTheme } from "../functions/theme";
-import { getRegions } from "../functions/general";
+import { getRegions, contentRoot } from "../functions/general";
 
 export default function Header() {
   const [theme, setTheme] = useState(localStorage.getItem("theme"));
@@ -12,7 +12,7 @@ export default function Header() {
   const renderRegionsList = () =>
     getRegions().map((region) => {
       return (
-        <Link to={`/region/${region}`}>
+        <Link to={contentRoot(`region/${region}`)} key={region}>
           {" "}
           <button className="btn">{region}</button>{" "}
         </Link>

@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "rest-countries-api",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,6 +16,8 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "prestart": "node createDB.js",
     "start": "run-p start-app start-api",
     "start-app": "react-scripts start",
@@ -41,6 +43,7 @@
   },
   "devDependencies": {
     "csvtojson": "^2.0.10",
+    "gh-pages": "^2.2.0",
     "imagemin": "^7.0.1",
     "imagemin-webp": "^5.1.0",
     "unirest": "^0.6.0"

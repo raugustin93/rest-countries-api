@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { contentRoot } from "../functions/general";
 
 export default function FlagCard(props) {
   const { name, population, region, capital, alpha2Code } = props.flag;
   return (
     <div className="card" key={name}>
       <img
-        src={`/assets/images/flags/${alpha2Code.toLowerCase()}.webp`}
+        src={contentRoot(
+          `assets/images/flags/${alpha2Code.toLowerCase()}.webp`
+        )}
         alt={`Flag of ${name}`}
         className="card-img-top"
       />
@@ -18,7 +21,10 @@ export default function FlagCard(props) {
         <p className="card-text">Region: {region}</p>
         <p className="card-text">Capital: {capital}</p>
         <p className="card-text">
-          <Link to={`/country/${alpha2Code.toLowerCase()}`}> More Info</Link>{" "}
+          <Link to={contentRoot(`country/${alpha2Code.toLowerCase()}`)}>
+            {" "}
+            More Info
+          </Link>{" "}
         </p>
       </div>
     </div>
